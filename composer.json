@@ -1,0 +1,56 @@
+{
+    "name": "kalibora/google-cloud-iap-jwt-validator",
+    "description": "Google Cloud Identity-Aware Proxy JWT (Json Web Token) Validator",
+    "keywords": ["google", "cloud", "jwt", "token"],
+    "license": "MIT",
+    "authors": [
+        {
+
+            "name": "Toshiyuki Fujita",
+            "email": "kalibora@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Kalibora\\GoogleCloud\\IdentityAwareProxy\\TokenValidator\\": "src"}
+    },
+    "autoload-dev": {
+        "psr-4": {"Kalibora\\GoogleCloud\\IdentityAwareProxy\\TokenValidator\\": "tests"}
+    },
+    "scripts": {
+        "qa": [
+            "@test",
+            "@analyse",
+            "@cs"
+        ],
+        "test" : [
+            "phpunit"
+        ],
+        "analyse" : [
+            "phpstan analyse -l max --no-progress src"
+        ],
+        "analyze" : [
+            "@analyse"
+        ],
+        "cs": [
+            "php-cs-fixer fix -v --dry-run --diff"
+        ]
+    },
+    "require": {
+        "web-token/jwt-core": "^1.2",
+        "web-token/jwt-signature": "^1.2",
+        "web-token/jwt-checker": "^1.2",
+        "web-token/jwt-key-mgmt": "^1.2",
+        "psr/http-message": "^1.0",
+        "php-http/client-implementation": "^1.0",
+        "php-http/httplug": "^1.0",
+        "php-http/message-factory": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.3",
+        "phpstan/phpstan": "^0.10",
+        "friendsofphp/php-cs-fixer": "^2.13",
+        "php-http/mock-client": "^1.0",
+        "php-http/message": "^1.0",
+        "guzzlehttp/psr7": "^1.0"
+    }
+}
